@@ -38,10 +38,11 @@ function createMessageFromMe(){
             messageContainer.innerHTML += textes.generateHTML()  }, 2000*(index+1))   // index нужен из за особенности setTimeout()   
         });
         setTimeout(() => {
-            resolve(toggleDisplay.classList.add('toggle__display'))             // settimeout для toggleClass 
+            resolve(toggleDisplay.classList.add('toggle__display'),messageContainer.scrollIntoView({block: 'end', behavior:'smooth'}))             // settimeout для toggleClass 
         }, 2000*myMessages.length);                             // общая длительность отправки сообщений
         myMessages = [];                                        // обнуление массива чтобы добавлять сообщения в будущем
     })
+    
 }
 
 createMessageFromMe().then( (resMessage) => {
@@ -61,6 +62,7 @@ inputForMessage.addEventListener('keydown', function(e){
                                              </li>`
         }
         inputForMessage.value = ''
+        messageContainer.scrollIntoView({block: 'end', behavior:'smooth'})  // опускает скролл в конец
     }
 })
 
@@ -73,4 +75,5 @@ btnForMessage.addEventListener('click', ()=>{
                                          </li>`
     }
     inputForMessage.value = ''
+    messageContainer.scrollIntoView({block: 'end', behavior:'smooth'})  // опускает скролл в конец
 })
