@@ -6,8 +6,16 @@ let btnForMessage = document.getElementById('input__btn')
 
 setInterval(function(){
     let d = new Date();
-    timeContainer.innerHTML = d.getHours() + ':' + d.getMinutes();          // обновляет время
-  }, 950);
+    let hours = d.getHours();
+    let minutes = d.getMinutes();
+    if(hours<10){
+        hours = '0' + hours
+    }
+    if(minutes<10){
+        minutes = '0' + minutes
+    }
+    timeContainer.innerHTML = hours + ':' + minutes;          // обновляет время
+  }, 10);
 
 
   class Message{
@@ -54,6 +62,7 @@ createMessageFromMe().then( (resMessage) => {
 
 inputForMessage.addEventListener('keydown', function(e){
     if(e.key === 'Enter' ){
+        e.preventDefault()          // без этого не скроллится по нажатию на enter
         if(inputForMessage.value != ''){
             messageContainer.innerHTML += `<li class="chat-item__from-person">
                                                 <p class="message-content">

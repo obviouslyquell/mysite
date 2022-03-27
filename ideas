@@ -9,6 +9,6 @@ send messages to my telegram ? ;
 
 short-time : 
 header with time;//
-mini-profile section;
+mini-profile section;//
 message-template;//
-write-a-message section;
+write-a-message section;//
