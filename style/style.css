@@ -63,7 +63,7 @@ body{
     align-items: center;
     width: 20vw;
     background-color: #e9ecf1;
-    border-radius: 15px;
+    border-radius: 0px 15px 15px 15px;
     padding: 5px 10px;
     margin: 5px;
     list-style: none;
@@ -73,7 +73,7 @@ body{
     display: flex;
     align-items: center;
     width: 20vw;
-    border-radius: 15px;
+    border-radius: 15px 0px 15px 15px;
     padding: 5px 10px;
     margin: 5px;
     list-style: none;
@@ -122,8 +122,9 @@ body{
     width: 70%;
     border:none;
     background-color: #5a5a5a;
-    color:rgb(61, 61, 61);
+    color:rgb(230, 230, 230);
     padding: 5px;
+    outline: none;
 }
 .input__button{
     width: 30%;
