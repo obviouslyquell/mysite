@@ -124,11 +124,8 @@ function chatBot(message) {
             myMessages.push('Не кричи, ' + remessage[i].response.toLowerCase()); // ответ на капс
             
             break;
-        } else if (remessage[i].text === message || remessage[i].text.toLowerCase() === message) {
+        }else if (remessage[i].text === message || remessage[i].text.toLowerCase() === message) {
             myMessages.push(remessage[i].response);
-            break;
-        }else{
-            myMessages.push('Я ему передам')
             break;
         }
 
